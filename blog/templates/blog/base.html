@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Django's Blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstraptheme.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" >
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Django's Blog App</a></h1>
+    </div>
+
+    <!-- html comment -->
+    {% comment 'django comment' %}
+    {% endcomment %}
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content_method %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <br>
+        <p>Published Date : 2018-05-09 (cording)</p>
+        <h2><a href="">My Second title</a> </h2>
+        <p>Second Sample Text</p>
+    </div>
+</body>
+</html>
