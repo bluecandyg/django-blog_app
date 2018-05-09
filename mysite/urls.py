@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    url(r'^admin/', admin.site.urls),       # admin 페이지
-    url(r'', include('blog.urls'))          # 메인화면
+    url(r'^admin/', admin.site.urls),           # admin 페이지
+    url(r'', include('blog.urls')),             # 메인화면
+    url(r'^accounts/login/$', auth_views.login, name='login'),      # 로그인 화면 - django 에서 기본으로 제공
+    url(r'^accounts/logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),   # 로그아웃
 ]
