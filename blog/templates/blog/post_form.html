@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content_method %}
+
+    <h1>New Post Form</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}    <!--# 보안 관련 설정(POST 방식 일경우에만 필요)-->
+        <table class="table table-bordered table-hover">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+
+    </form>
+
+{% endblock %}
